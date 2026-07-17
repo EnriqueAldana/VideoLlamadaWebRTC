@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call App - Login</title>
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        .auth-container{
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .auth-tabs{
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .auth-tab{
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            background: #f0f0f0;
+            cursor: pointer;
+        }
+        .auth-tab.active{
+            background: #4CAF50;
+            color: white;
+        }
+        .auth-form{
+            display: none;
+        }
+        .auth-form.active{
+            display: block;
+        }
+        .form-group{
+            margin-bottom: 15px;
+        }
+        .form-group label{
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .auth-submit{
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .auth-submit:hover {
+            background: #45a049;
+        }
+        .error-message{
+            color: #f44336;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .success-message{
+            color: #4CAF50;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="auth-container">
+            <h1>Video Call App</h1>
+
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="login-tab">Login</div>
+                <div class="auth-tab" id="signup-tab">Sign Up</div>
+            </div>
+            <form id="login-form" class="auth-form active">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="auth-submit">Login</button>
+                <p class="error-message" id="login-error"></p>
+            </form>
+
+            <form id="signup-form" class="auth-form">
+                <div class="form-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" required placeholder="Choose a username">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input  type="email" id="signup-email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required placeholder="Choose a password">
+                </div>
+                <button type="submit" class="auth-submit">Sign Up</button>
+                <p class="error-message" id="signup-error"></p>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.4/dist/umd/supabase.min.js"></script>
+
+    <script src="auth.js"></script>
+</body>
+</html>

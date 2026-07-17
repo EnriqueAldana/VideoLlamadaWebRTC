@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Video Llamada con WebRTC</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="setup-screen">
+            <h1>Aplicación de Video Llamada</h1>
+            <button id="startCall"> Iniciar nueva Llamada</button>
+            <div class="join-form">
+                <input type="text" id="roomId" placeholder="Escriba un ID de Llamada"/>
+                <button id="joinCall"> Unirse a una llamada </button>
+            </div>
+
+            <div id="generatedId" class="meeting-id-display hidden">
+                <span id="roomNumber"></span>
+                <button id="copyBtn" onclick="copyRoomId()">Copiar ID</button>
+            </div>
+        </div>
+        <div class="call-screen hidden">
+            <div class="room-info">
+                <div class="meeting-id-display">
+                     ID de Llamada: <span id="activeRoomNumber"></span>
+                    <button id="copyActiveBtn" onclick="copyRoomId()">Copiar ID</button>
+                </div>
+            </div>
+            <div id="joinRequests" class="join-requests-container"></div>
+            <div class="video-container">
+                <video id="localVideo" autoplay muted></video>
+                <video id="remoteVideo" autoplay></video>
+            </div>
+            <div class="controls">
+                <button id="muteAudio">Silenciar Audio</button>
+                <button id="muteVideo">Silenciar Video</button>
+                <button id="endCall" onclick="window.location.reload()">Finalizar Llamada</button>
+               <!-- no aplica logout
+                <button id="logoutBtn" onclick="logout()">Logout</button>
+                -->
+            </div>
+        </div>
+
+    <div id="userInfo" class="user-info-container">
+        <span id="username"></span>
+    </div>
+    </div>
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.4/dist/umd/supabase.min.js"></script>
+  -->
+    <script src="script.js" defer></script>
+    
+</body>
+</html>
