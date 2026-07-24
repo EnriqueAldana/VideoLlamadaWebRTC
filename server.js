@@ -7,7 +7,7 @@ app.get('/',(req, res) => {
     res.redirect('/index.html');
 });
 const server = app.listen(3000, () => {
-    console.log('Server running on http://localhost:3000');
+    console.log('Server running on http://localhost:80');
 });
 const io = socketio(server);
 const roomHosts = {};

@@ -281,7 +281,7 @@ muteAudioBtn.addEventListener("click", ()=>{
     myStream.getAudioTracks().forEach(track => {
         track.enabled = audioEnabled;
     });
-    muteAudioBtn.textContent = audioEnabled ? "Mute Audio": "Unmute Audio";
+    muteAudioBtn.textContent = audioEnabled ? "Sileciar Audio": "Habilitar Audio";
     muteAudioBtn.classList.toggle("muted", !audioEnabled);
     console.log("Audio state changed to:", audioEnabled);
 });
@@ -290,7 +290,7 @@ muteVideoBtn.addEventListener("click", ()=> {
     myStream.getVideoTracks().forEach(track => {
         track.enabled = videoEnabled;
     });
-    muteVideoBtn.textContent = videoEnabled ? "Mute Video": "Unmute Video";
+    muteVideoBtn.textContent = videoEnabled ? "Inhabilitar Video": "Habilitar Video";
     muteVideoBtn.classList.toggle("muted", !videoEnabled);
 });
 
